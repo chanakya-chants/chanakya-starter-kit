@@ -6,7 +6,6 @@
 var C = require('chanakya'),
   Cfb = require('chanakya-facebook');
 
-
 var bot = C.bootstrap({
   mount: 'bot',
   expectation: 'greetings',

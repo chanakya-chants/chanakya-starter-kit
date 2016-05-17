@@ -5,7 +5,7 @@
 var core = require('chanakya'),
   Q = require('q');
 
-core.validator('isGreetings', function (message) {
+core.validator('isGreetings', null, function (message) {
   return Q.fcall(function () {
     return message == 'hi';
   });

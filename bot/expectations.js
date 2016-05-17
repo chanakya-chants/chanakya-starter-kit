@@ -4,10 +4,14 @@
 
 var core = require('chanakya');
 
-core.expectation('greetings', function () {
-  return {
-    validators: ['isGreetings'],
-    success: ['success'],
-    fail: ['fail']
-  };
+core.expectation('greetings', ['isGreetings'], function (res) {
+  switch (res) {
+    case true:
+      return ['fail', 'success'];
+      break;
+    case false:
+      return ['fail'];
+      break;
+  }
+
 });

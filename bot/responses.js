@@ -7,14 +7,14 @@ var _ = require('lodash');
 var Q = require('q'),
   http = require('http');
 
-core.response('fail', function (to) {
+core.response('fail', 'greetings', function (to) {
   return {
     text: `I am sorry ${to.first_name}, I am unable to understand what you mean.`
   };
-}, 'greetings');
+});
 
-core.response('success', function (to) {
+core.response('success', 'greetings', function (to) {
   return {
     text: `Hello ${to.first_name}, How are you?`
   };
-}, 'greetings');
+});
