@@ -7,7 +7,10 @@ var core = require('chanakya');
 core.expectation('greetings', ['isGreetings'], function (res) {
   switch (res) {
     case true:
-      return ['fail', 'success'];
+      return {
+        data: res,
+        responses: ['fail', 'success']
+      };
       break;
     case false:
       return ['fail'];

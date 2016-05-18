@@ -3,18 +3,15 @@
  */
 
 var core = require('chanakya');
-var _ = require('lodash');
-var Q = require('q'),
-  http = require('http');
 
-core.response('fail', 'greetings', function (to) {
+core.response('fail', 'greetings', function (to, validatorResult) {
   return {
-    text: `I am sorry ${to.first_name}, I am unable to understand what you mean.`
+    text: `I am sorry ${to.first_name}, I am unable to understand what you mean. ${validatorResult}`
   };
 });
 
-core.response('success', 'greetings', function (to) {
+core.response('success', 'greetings', function (to, validatorResult) {
   return {
-    text: `Hello ${to.first_name}, How are you?`
+    text: `Hello ${to.first_name}, How are you? ${validatorResult}`
   };
 });
